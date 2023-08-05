@@ -40,9 +40,35 @@ const callAverage = averageOfAll(myArray);
 console.log(callAverage);
 
 
-// ৪. একটা ফাংশন লিখো। যেটা ইনপুট প্যারামিটার হিসেবে একটা আয়তক্ষেত্রের দৈর্ঘ্য আর উচ্চতাকে নিবে। তারপর সেই আয়তক্ষেত্র এর area (আয়তন) কে রেজাল্ট হিসেবে রিটার্ন করবে। 
+// ৪. একটা ফাংশন লিখো। যেটা ইনপুট প্যারামিটার হিসেবে একটা আয়তক্ষেত্রের দৈর্ঘ্য আর উচ্চতাকে নিবে। তারপর সেই আয়তক্ষেত্র এর area (আয়তন) কে রেজাল্ট হিসেবে রিটার্ন করবে।
+
+
+function calculateArea(height, length){
+    let area = height * length
+    return area;
+}
+const getHeightLength  = calculateArea(50, 75);
+console.log(getHeightLength);
 
 
 
 // ৫. (ট্রিকি) কোন একটা array এর মধ্যে অনেকগুলা সংখ্যা আছে। সেই সংখ্যাগুলো থেকে second largest সংখ্যা বের করার একটা প্রোগ্রাম লিখো। দরকার হলে গুগলে সার্চ দাও। তারপর সার্চ রেজাল্ট দেখে বুঝে বুঝে করার চেষ্টা করো। 
 
+function findSecondLargest(numbers){
+    let first = -1;
+    let second = -1;
+    for(let i=0; i<numbers.length; i++){
+        if(numbers[i]>first){
+            first = second;
+            second = numbers[i]
+        }
+        else if(numbers[i] > second && numbers[i] !== first){
+            second = numbers[i]
+        }
+    }
+    return second;
+}
+
+const arr = [15, 34, 68, 25, 12, 45, 72];
+const geNumbers =findSecondLargest(arr);
+console.log(geNumbers);
